@@ -1,4 +1,4 @@
-#Website Formation 
+# Website Formation 
 
 This is a small Symfony 4 Project. This project is here just for keep me active on development and don't forget how symfony works.
 

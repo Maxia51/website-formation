@@ -19,6 +19,19 @@ class FormationRepository extends ServiceEntityRepository
         parent::__construct($registry, Formation::class);
     }
 
+    /**
+     * @param int $limit
+     * @return Formation|null
+     */
+    public function findLatest(int $limit = 3)
+    {
+        return $this->createQueryBuilder('f')
+            ->orderBy('f.created_at', 'DESC')
+            ->setMaxResults($limit)
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Formation[] Returns an array of Formation objects
     //  */

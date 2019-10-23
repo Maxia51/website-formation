@@ -7,7 +7,7 @@ This is a small Symfony 4 Project. This project is here just for keep me active 
 - [x] Display a list of Formations
 - [x] Display a list of Lessons
 - [ ] Create a secure Back-Office
-- [ ] Create a Formation
-- [ ] Create a lesson
+- [x] Create, Update, Delete a Formation
+- [x] Create, Update, Delete lesson
 - [ ] Use Docker to build the app
 - [ ] deploy the project on Kubernetes

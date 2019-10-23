@@ -3,41 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Formation{% endblock %}</title>
-        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
 
         {% block stylesheets %}
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
             {{ encore_entry_link_tags('app') }}
+
         {% endblock %}
     </head>
     <body>
 
-        {% block header %}
-            <nav class="flex items-center justify-between flex-wrap bg-gray-500 p-6">
-                <div class="flex items-center flex-shrink-0 text-white mr-6">
-                    <a href="{{ path('home') }}">
-                        <svg class="fill-current h-8 w-8 mr-2" width="54" height="54" viewBox="0 0 54 54" xmlns="http://www.w3.org/2000/svg"><path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"/></svg>
-                        <span class="font-semibold text-xl tracking-tight">Formation</span>
-                    </a>
-                </div>
-                <div class="block lg:hidden" id="nav-toggle">
-                    <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-                        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
-                    </button>
-                </div>
-                <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="nav-content">
-                    <div class="text-sm lg:flex-grow">
-                        <a href="{{ path('formation') }}" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:underline mr-4">
-                            Formations
-                        </a>
-                        <a href="{{ path('lesson') }}" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:underline mr-4">
-                            Lessons
-                        </a>
-                        <a href="{{ path('formation') }}" class="block mt-4 lg:inline-block lg:mt-0 text-white hover:underline">
-                            Blog
-                        </a>
-                    </div>
-                </div>
-            </nav>
+        {% block nav %}
+            {% include 'nav.html.twig' %}
         {% endblock %}
 
         {% block body %}{% endblock %}
@@ -45,6 +22,9 @@
 
 
         {% block javascripts %}
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </body>

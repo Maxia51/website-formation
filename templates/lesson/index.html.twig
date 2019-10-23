@@ -1,14 +1,32 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="container mx-auto">
-
-    <h2>Lessons</h2>
-    <hr/>
-
-    {% for lesson in lessons %}
-        <li><a href="{{ path('lesson_detail', { id: lesson.id}) }}">{{ lesson.title }}</a></li>
-    {% endfor %}
-
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Lesson</h1>
+        <p class="lead">Here you can find all the lessons written on this website</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        {% for lesson in lessons %}
+            <a href="{{ path('lesson_detail', { id: lesson.id}) }}">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="https://picsum.photos/800/800" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ lesson.title }}</h5>
+                                <p class="card-text">{{ lesson.description }}</p>
+                                <p class="card-text"><small class="text-muted">{{ lesson.createdAt | date('M Y') }}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}

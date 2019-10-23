@@ -1,11 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+<div class="jumbotron jumbotron-fluid">
     <div class="container">
-        <h2 class="text-2xl font-bold">{{ formation.title }}</h2>
-        <hr/>
-
-        <p>{{ formation.description }}</p>
+        <h1 class="display-4">{{ formation.title }}</h1>
+        <p class="lead">{{ formation.description }}</p>
     </div>
+</div>
+<div class="container mx-auto">
+
+    <p class="text-right font-italic">{{ formation.author }}</p>
+
+
+</div>
 {% endblock %}

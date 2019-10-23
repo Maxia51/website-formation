@@ -15,6 +15,3 @@ require('../css/app.css');
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
 
 //Javascript to toggle the menu
-document.getElementById('nav-toggle').onclick = function(){
-    document.getElementById("nav-content").classList.toggle("hidden");
-}

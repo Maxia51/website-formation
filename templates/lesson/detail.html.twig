@@ -1,15 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">{{ lesson.title }}</h1>
+        <p class="lead">{{ lesson.description }}</p>
+    </div>
+</div>
 <div class="container mx-auto">
 
-    <h2>{{ lesson.title }}</h2>
-    <hr/>
+    <p class="text-right font-italic">{{ lesson.author }}</p>
 
-    <a>{{ lesson.author }}</a>
-    <a>{{ lesson.description }}</a>
     <p>{{ lesson.content }}</p>
-
 
 </div>
 {% endblock %}

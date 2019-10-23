@@ -41,12 +41,6 @@ class HomeController extends AbstractController
         $formations = $this->formationRepository->findLatest();
         $lessons = $this->lessonRepository->findLatest();
 
-        if (empty($formations)) {
-            return $this->render('home/index.html.twig', [
-                'error' => 'Oops, it seem\'s nothing has been written yet !',
-            ]);
-        }
-
         return $this->render('home/index.html.twig', [
             'formations' => $formations,
             'lessons' => $lessons

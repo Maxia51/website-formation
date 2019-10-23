@@ -32,13 +32,13 @@
     </div>
 
     <div class="row justify-content-center">
-        {% for formation in formations %}
+        {% for lesson in lessons %}
             <div class="card" style="width: 18rem;">
                 <img src="https://picsum.photos/800/500" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{ formation.title }}</h5>
-                    <p class="card-text">{{ formation.description }}</p>
-                    <a href="{{ path('formation.detail', {id: formation.id}) }}" class="btn btn-primary">Read it !</a>
+                    <h5 class="card-title">{{ lesson.title }}</h5>
+                    <p class="card-text">{{ lesson.description }}</p>
+                    <a href="{{ path('formation.detail', {id: lesson.id}) }}" class="btn btn-primary">Read it !</a>
                 </div>
             </div>
         {% endfor %}

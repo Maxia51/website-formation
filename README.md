@@ -9,5 +9,5 @@ This is a small Symfony 4 Project. This project is here just for keep me active 
 - [x] Create a secure Back-Office
 - [x] Create, Update, Delete a Formation
 - [x] Create, Update, Delete lesson
-- [ ] Use Docker to build the app
+- [x] Use Docker to build the app
 - [ ] deploy the project on Kubernetes

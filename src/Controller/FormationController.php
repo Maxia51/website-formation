@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Formation;
+use App\Repository\FormationRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,13 +13,17 @@ class FormationController extends AbstractController
 {
 
     /**
-     * @var \Doctrine\Common\Persistence\ObjectRepository Object Manager
+     * @var FormationRepository
      */
-    private $om;
+    private $repository;
 
-    public function __construct(ObjectManager $om)
+    /**
+     * FormationController constructor.
+     * @param FormationRepository $repository
+     */
+    public function __construct(FormationRepository $repository)
     {
-        $this->om = $om->getRepository(Formation::class);
+        $this->repository = $repository;
     }
 
     /**
@@ -28,7 +33,7 @@ class FormationController extends AbstractController
     public function index() : Response
     {
 
-        $formations = $this->om->findAll();
+        $formations = $this->repository->findAll();
 
         return $this->render('formation/index.html.twig', [
             'formations' => $formations,
@@ -42,7 +47,7 @@ class FormationController extends AbstractController
      */
     public function detailFormation(int $id) : Response
     {
-        $formation = $this->om->find($id);
+        $formation = $this->repository->find($id);
 
         return $this->render('formation/detail.html.twig', [
             'formation' => $formation

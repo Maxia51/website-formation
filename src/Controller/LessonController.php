@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Lesson;
+use App\Repository\LessonRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,13 +13,17 @@ class LessonController extends AbstractController
 {
 
     /**
-     * @var \Doctrine\Common\Persistence\ObjectRepository Object Manager
+     * @var LessonRepository
      */
-    private $om;
+    private $repository;
 
-    public function __construct(ObjectManager $om)
+    /**
+     * LessonController constructor.
+     * @param LessonRepository $repository
+     */
+    public function __construct(LessonRepository $repository)
     {
-        $this->om = $om->getRepository(Lesson::class);
+        $this->repository = $repository->getRepository(Lesson::class);
     }
 
     /**
@@ -28,7 +33,7 @@ class LessonController extends AbstractController
     public function index() : Response
     {
 
-        $lessons = $this->om->findAll();
+        $lessons = $this->repository->findAll();
 
         return $this->render('lesson/index.html.twig', [
             'lessons' => $lessons,
@@ -37,12 +42,13 @@ class LessonController extends AbstractController
 
     /**
      * @Route("/lesson/{id}", name="lesson_detail")
+     * @param int $id
      * @return Response
      */
     public function detailLesson(int $id) : Response
     {
 
-        $lesson = $this->om->find($id);
+        $lesson = $this->repository->find($id);
 
         return $this->render('lesson/detail.html.twig', [
             'lesson' => $lesson,

@@ -21,6 +21,17 @@ class LessonRepository extends ServiceEntityRepository
     }
 
     /**
+     * @return Lesson[]
+     */
+    public function findAllOrderById()
+    {
+        return $this->createQueryBuilder('f')
+            ->orderBy('f.id', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
+    /**
      * @param int $limit
      * @return Formation|null
      */

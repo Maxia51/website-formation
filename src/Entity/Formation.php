@@ -49,6 +49,14 @@ class Formation
         $this->lessons = new ArrayCollection();
     }
 
+    /**
+     * @return string
+     */
+    public function __toString() : string
+    {
+        return $this->getTitle();
+    }
+
     public function getId(): ?int
     {
         return $this->id;

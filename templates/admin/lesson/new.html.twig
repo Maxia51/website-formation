@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Create a lesson</h1>
+        <p class="lead">Here you can create a lesson</p>
+    </div>
+</div>
+<div class="container mt-4">
+    {{ form_start(form) }}
+    {{ form_rest(form) }}
+    <button class="btn btn-primary">Save</button>
+    {{ form_end(form) }}
+</div>
+{% endblock %}

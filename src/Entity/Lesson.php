@@ -46,6 +46,15 @@ class Lesson
      */
     private $formation;
 
+    /**
+     * Lesson constructor.
+     */
+    public function __construct()
+    {
+        $this->created_at = new \DateTime();
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;

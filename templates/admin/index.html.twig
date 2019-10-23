@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4">Admin</h1>
+        <p class="lead">Here you can edit the formations and the lessons</p>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+
+
+        <a href="{{ path('admin_formation') }}">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="https://picsum.photos/800/800" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Formation</h5>
+                            <p class="card-text">Edit Formations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="{{ path('admin_lesson') }}">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row no-gutters">
+                    <div class="col-md-4">
+                        <img src="https://picsum.photos/800/800" class="card-img" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">Lessons</h5>
+                            <p class="card-text">Edit Lessons</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </a>
+
+    </div>
+</div>>
+{% endblock %}

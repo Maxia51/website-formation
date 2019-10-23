@@ -41,7 +41,7 @@ class LessonController extends AbstractController
     }
 
     /**
-     * @Route("/lesson/{id}", name="lesson_detail")
+     * @Route("/lesson/{id}", name="lesson.detail")
      * @param int $id
      * @return Response
      */

@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row">
         {% for lesson in lessons %}
-            <a href="{{ path('lesson_detail', { id: lesson.id}) }}">
+            <a href="{{ path('lesson.detail', { id: lesson.id}) }}">
                 <div class="card mb-3" style="max-width: 540px;">
                     <div class="row no-gutters">
                         <div class="col-md-4">

@@ -12,7 +12,7 @@ class AdminController extends AbstractController
 {
 
     /**
-     * @Route(path="/admin", name="admin")
+     * @Route(path="/admin", name="admin.index")
      */
     public function index() : Response
     {

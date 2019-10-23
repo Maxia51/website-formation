@@ -20,6 +20,17 @@ class FormationRepository extends ServiceEntityRepository
     }
 
     /**
+     * @return Formation[]
+     */
+    public function findAllOrderById()
+    {
+        return $this->createQueryBuilder('f')
+            ->orderBy('f.id', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
+
+    /**
      * @param int $limit
      * @return Formation|null
      */

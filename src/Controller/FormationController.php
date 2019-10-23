@@ -41,7 +41,7 @@ class FormationController extends AbstractController
     }
 
     /**
-     * @Route("/formation/{id}", name="formation_detail")
+     * @Route("/formation/{id}", name="formation.detail")
      * @param int $id
      * @return Response
      */

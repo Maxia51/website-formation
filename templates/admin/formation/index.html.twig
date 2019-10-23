@@ -9,8 +9,40 @@
     </div>
 </div>
 <div class="container">
-    <div class="row">
 
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">date</th>
+            <th scope="col">Action</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for formation in formations %}
+                <tr>
+                    <th scope="row">{{ formation.id }}</th>
+                    <td>{{ formation.title }}</td>
+                    <td>{{ formation.author }}</td>
+                    <td>{{ formation.createdAt | date("M Y") }}</td>
+                    <td>
+                        <a href="{{ path('admin.formation.edit', {id: formation.id}) }}" class="btn btn-primary">Edit</a>
+                        <form method="post" action="{{ path('admin.formation.delete', { id: formation.id } ) }}" style="display: inline-block">
+                            <input hidden name="_method" value="DELETE">
+                            <input hidden name="_token" value="{{ csrf_token("delete" ~ formation.id) }}">
+                            <button class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="text-right">
+        <a href="{{ path('admin.formation.create') }}" class="btn btn-primary">Create</a>
     </div>
+
 </div>
 {% endblock %}

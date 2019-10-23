@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ formation.title }}</h5>
                     <p class="card-text">{{ formation.description }}</p>
-                    <a href="{{ path('formation_detail', {id: formation.id}) }}" class="btn btn-primary">Read it !</a>
+                    <a href="{{ path('formation.detail', {id: formation.id}) }}" class="btn btn-primary">Read it !</a>
                 </div>
             </div>
         {% endfor %}
@@ -38,7 +38,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ formation.title }}</h5>
                     <p class="card-text">{{ formation.description }}</p>
-                    <a href="{{ path('formation_detail', {id: formation.id}) }}" class="btn btn-primary">Read it !</a>
+                    <a href="{{ path('formation.detail', {id: formation.id}) }}" class="btn btn-primary">Read it !</a>
                 </div>
             </div>
         {% endfor %}

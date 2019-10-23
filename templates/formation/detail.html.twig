@@ -11,6 +11,29 @@
 
     <p class="text-right font-italic">{{ formation.author }}</p>
 
+    <div class="mx-auto">
+
+        {% for lesson in formation.lessons %}
+
+            <a href="{{ path('lesson_detail', { id: lesson.id}) }}">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="https://picsum.photos/800/800" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ lesson.title }}</h5>
+                                <p class="card-text">{{ lesson.description }}</p>
+                                <p class="card-text"><small class="text-muted">{{ lesson.createdAt | date('M Y') }}</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+
 
 </div>
 {% endblock %}

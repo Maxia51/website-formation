@@ -27,7 +27,6 @@ class HomeController extends AbstractController
      */
     public function index() : Response
     {
-
         // We want only the latest formations to print on home page
         $formations = $this->om->findLatest();
 

@@ -41,6 +41,11 @@ class Lesson
      */
     private $created_at;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Formation", inversedBy="lessons")
+     */
+    private $formation;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -102,6 +107,18 @@ class Lesson
     public function setCreatedAt(\DateTimeInterface $created_at): self
     {
         $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getFormation(): ?Formation
+    {
+        return $this->formation;
+    }
+
+    public function setFormation(?Formation $formation): self
+    {
+        $this->formation = $formation;
 
         return $this;
     }

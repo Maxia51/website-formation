@@ -14,11 +14,11 @@ class HomeController extends AbstractController
     /**
      * @var \Doctrine\Common\Persistence\ObjectRepository Object Manager
      */
-    private $em;
+    private $om;
 
-    public function __construct(ObjectManager $em)
+    public function __construct(ObjectManager $om)
     {
-        $this->em = $em->getRepository(Formation::class);
+        $this->om = $om->getRepository(Formation::class);
     }
 
     /**
@@ -29,7 +29,7 @@ class HomeController extends AbstractController
     {
 
         // We want only the latest formations to print on home page
-        $formations = $this->em->findLatest();
+        $formations = $this->om->findLatest();
 
         if (empty($formations)) {
             return $this->render('home/index.html.twig', [

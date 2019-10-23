@@ -14,11 +14,11 @@ class FormationController extends AbstractController
     /**
      * @var \Doctrine\Common\Persistence\ObjectRepository Object Manager
      */
-    private $em;
+    private $om;
 
-    public function __construct(ObjectManager $em)
+    public function __construct(ObjectManager $om)
     {
-        $this->em = $em->getRepository(Formation::class);
+        $this->om = $om->getRepository(Formation::class);
     }
 
     /**
@@ -28,7 +28,7 @@ class FormationController extends AbstractController
     public function index() : Response
     {
 
-        $formations = $this->em->findAll();
+        $formations = $this->om->findAll();
 
         return $this->render('formation/index.html.twig', [
             'formations' => $formations,
@@ -42,7 +42,7 @@ class FormationController extends AbstractController
      */
     public function detailFormation(int $id) : Response
     {
-        $formation = $this->em->find($id);
+        $formation = $this->om->find($id);
 
         return $this->render('formation/detail.html.twig', [
             'formation' => $formation

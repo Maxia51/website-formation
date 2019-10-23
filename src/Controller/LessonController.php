@@ -11,11 +11,14 @@ use Symfony\Component\Routing\Annotation\Route;
 class LessonController extends AbstractController
 {
 
-    private $em;
+    /**
+     * @var \Doctrine\Common\Persistence\ObjectRepository Object Manager
+     */
+    private $om;
 
-    public function __construct(ObjectManager $em)
+    public function __construct(ObjectManager $om)
     {
-        $this->em = $em->getRepository(Lesson::class);
+        $this->om = $om->getRepository(Lesson::class);
     }
 
     /**
@@ -25,7 +28,7 @@ class LessonController extends AbstractController
     public function index() : Response
     {
 
-        $lessons = $this->em->findAll();
+        $lessons = $this->om->findAll();
 
         return $this->render('lesson/index.html.twig', [
             'lessons' => $lessons,
@@ -39,7 +42,7 @@ class LessonController extends AbstractController
     public function detailLesson(int $id) : Response
     {
 
-        $lesson = $this->em->find($id);
+        $lesson = $this->om->find($id);
 
         return $this->render('lesson/detail.html.twig', [
             'lesson' => $lesson,

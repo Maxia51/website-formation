@@ -18,6 +18,8 @@ services:
             POSTGRES_USER: maxence
             POSTGRES_PASSWORD: example
             POSTGRES_DB: formation
+        volumes:
+            - backup.sql/docker-entrypoint-initdb.d
         ports:
             - 5432:5432
     adminer:

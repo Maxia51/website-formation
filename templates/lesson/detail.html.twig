@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container mx-auto">
+
+    <h2>{{ lesson.title }}</h2>
+    <hr/>
+
+    <a>{{ lesson.author }}</a>
+    <a>{{ lesson.description }}</a>
+    <p>{{ lesson.content }}</p>
+
+
+</div>
+{% endblock %}

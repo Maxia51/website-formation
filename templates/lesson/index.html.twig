@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container mx-auto">
+
+    <h2>Lessons</h2>
+    <hr/>
+
+    {% for lesson in lessons %}
+        <li><a href="{{ path('lesson_detail', { id: lesson.id}) }}">{{ lesson.title }}</a></li>
+    {% endfor %}
+
+</div>
+{% endblock %}

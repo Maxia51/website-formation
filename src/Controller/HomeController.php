@@ -27,8 +27,8 @@ class HomeController extends AbstractController
 
     public function __construct(FormationRepository $formationRepository, LessonRepository $lessonRepository)
     {
-        $this->formationRepository = $formationRepository->getRepository(Formation::class);
-        $this->lessonRepository = $lessonRepository->getRepository(Lesson::class);
+        $this->formationRepository = $formationRepository;
+        $this->lessonRepository = $lessonRepository;
     }
 
     /**

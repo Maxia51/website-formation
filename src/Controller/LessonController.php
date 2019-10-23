@@ -23,7 +23,7 @@ class LessonController extends AbstractController
      */
     public function __construct(LessonRepository $repository)
     {
-        $this->repository = $repository->getRepository(Lesson::class);
+        $this->repository = $repository;
     }
 
     /**
